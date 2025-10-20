@@ -1,0 +1,338 @@
+    :root{
+      --brand: #69abe4;           /* เปลี่ยนสีหลักของเว็บ */
+      --brand-600: #1565c0;
+      --brand-700: #9cbff3;
+      --accent: #ffca28;          /* สีเน้น */
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --ring: rgba(30,136,229,.35);
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(2, 8, 23, .08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:'Noto Sans Thai',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:var(--bg); line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px, 100%); margin-inline:auto}
+ 
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.75); border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:10px 0}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:800}
+    .logo-mark{width:50px; height:50px; border-radius:12px;  display:grid; place-items:center; color:white; box-shadow:var(--shadow)}
+    .logo-mark svg{width:30px; height:30px}
+    .nav-links{display:none; gap:18px; align-items:center}
+    .nav-links a{padding:14px 12px; border-radius:10px; font-weight:500; font-size: 15px; color:#1f2937}
+    .nav-links a:hover{background:#eef5ff}
+    .cta{background:var(--brand); color:white; padding:10px 14px; border-radius:12px; box-shadow:var(--shadow)}
+    .cta:hover{background:var(--brand-600)}
+    .menu-btn{display:none; background:none; border:none; padding:10px}
+ 
+    /* Mobile nav */
+    @media (max-width: 880px){
+      .nav-links{display:none}
+      .menu-btn{display:block}
+      .mobile-menu{display:none; position:absolute; top:64px; left:0; right:0; background:white; border-bottom:1px solid rgba(0,0,0,.06); box-shadow:var(--shadow)}
+      .mobile-menu a{display:block; padding:14px 24px; border-top:1px solid rgba(0,0,0,.04)}
+      .mobile-menu a:hover{background:#f8fafc}
+    }
+ 
+    /* Hero */
+    .hero{position:relative; overflow:hidden; background:radial-gradient(1200px 500px at 80% -150px, #dbeafe 0%, transparent 60%), linear-gradient(180deg, #ffffff 0%, #f6fbff 100%)}
+    .hero-inner{display:grid; grid-template-columns: 1.2fr 1fr; gap:40px; padding:64px 0}
+    .badge{display:inline-flex; align-items:center; gap:8px; background:#eef7ff; color:#1e3a8a; padding:8px 12px; border-radius:999px; font-weight:700; box-shadow:inset 0 0 0 1px rgba(30,136,229,.2)}
+    .hero h1{font-size: clamp(28px, 4.6vw, 56px); line-height:1.1; margin:14px 0 10px}
+    .hero p{font-size: clamp(16px, 2.2vw, 18px); color:var(--muted); margin:0 0 22px}
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap}
+    .hero-cta{background:var(--brand); color:white; padding:14px 18px; border-radius:14px; font-weight:800}
+    .hero-cta.secondary{background:transparent; color:var(--brand-700); border:2px solid #cfe6ff}
+ 
+    .hero-graphic{position:relative;}
+    .hero-card{background:var(--card); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); margin-bottom:16px}
+    .hero-grid{display:grid; grid-template-columns:1fr 1fr 1fr ; gap:16px}
+    .stat{display:flex; align-items:center; gap:16px}
+    .stat strong{font-size:24px}
+ 
+    @media (max-width: 800px){
+      .hero-inner{grid-template-columns:2fr}
+    }
+ 
+    /* Sections */
+    section{padding:60px 0}
+    .section-head{display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:22px}
+    .section-head h2{font-size: clamp(22px, 3.2vw, 34px); margin:0}
+    .section-head p{color:var(--muted); margin:6px 0 0}
+ 
+    /* Cards & grids */
+    .grid{display:grid; gap:16px}
+    /*.grid-3{grid-template-columns: repeat(3, 1fr)}*/
+    .grid-4{grid-template-columns: repeat(3, 1fr)}
+    .grid-2{grid-template-columns: repeat(2, 2fr)}
+    @media (max-width: 960px){
+      .grid-4{grid-template-columns: repeat(2, 1fr)}
+      /*.grid-3{grid-template-columns: repeat(2, 1fr)}*/
+    }
+    @media (max-width: 640px){
+      /*.grid-3,*/.grid-4,.grid-2{grid-template-columns: 2fr}
+    }
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); border:1px solid rgba(2,8,23,.06)}
+    .card h3{margin:6px 0 8px}
+    .pill{display:inline-block; padding:6px 10px; background:#f1f5f9; border-radius:999px; font-size:12px; font-weight:700; color:#334155}
+ 
+    /* Programs */
+    .prog-icon{width:48px; height:48px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, #eff6ff, #e0f2fe); border:1px solid #dbeafe}
+ 
+    /* Assessment */
+    .timeline{position:relative; padding-left:30px}
+    .timeline::before{content:""; position:absolute; left:15px; top:0; bottom:0; width:2px; background:#e5e7eb}
+    .step{position:relative; margin:50px 0; padding-bottom:8px}
+    .step::before{content:""; position:absolute; left:-19px; top:2px; width:14px; height:14px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 3px #e3f2fd}
+ 
+    /* News/Event list */
+    .item{display:flex; gap:14px}
+    .item time{font-weight:800; color:var(--brand-700)}
+    .item .tag{margin-left:auto}
+ 
+    /* Teachers */
+    .teacher{display:flex; align-items:center; gap:14px}
+    .avatar{width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg, white, white); display:grid; place-items:center; font-weight:900; color:#0d47a1}
+ 
+    
+ 
+    /* Contact */
+    form{display:grid; gap:12px}
+    input, textarea, select{padding:12px 14px; border-radius:12px; border:1px solid #e5e7eb; outline:none; font:inherit; background:white}
+    input:focus, textarea:focus, select:focus{box-shadow:0 0 0 4px var(--ring); border-color:#bfdbfe}
+    button{cursor:pointer; font-weight:800}
+ 
+    /* Footer */
+    footer{background:#0b1020; color:#d1d5db; padding:40px 0}
+    .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:20px}
+    .footer-grid a{color:#e5e7eb}
+    .copyright{border-top:1px solid rgba(255,255,255,.08); margin-top:24px; padding-top:16px; font-size:14px; color:#9ca3af}
+    @media (max-width: 860px){.footer-grid{grid-template-columns:1fr}}
+ 
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .hidden{display:none}
+    .center{text-align:center}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .shadow{box-shadow:var(--shadow)}
+    .accent{color:var(--brand)}
+    .btn{display:inline-flex; align-items:center; gap:10px; border-radius:12px; padding:10px 14px; border:1px solid #e5e7eb; background:white}
+    .btn:hover{background:#f8fafc}
+    .btn.primary{background:var(--brand); color:white; border-color:transparent}
+    .floating-top{position:fixed; right:16px; bottom:16px; border-radius:999px; padding:12px 14px; background:var(--brand); color:white; box-shadow:var(--shadow)}
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+/* หลักสูตรการเรียนรู้ */
+#programs .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+ 
+#programs .card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+ 
+#programs .card:hover {
+  transform: translateY(-5px);
+}
+ 
+#programs .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+ 
+#programs .card h3 {
+  margin: 0.5rem 1rem 0;
+  color: #333;
+}
+ 
+#programs .card p.muted {
+  margin: 0.25rem 1rem 1rem;
+  color: #000000;
+}
+ 
+#programs .card .btn {
+  margin: 0.5rem 1rem 1rem;
+  padding: 0.5rem 1rem;
+}
+ 
+ 
+/* ครูและบุคลากร */
+#teachers .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr  ));
+  gap: 1rem;
+}
+ 
+#teachers .card.teacher {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+ 
+#teachers .card.teacher:hover {
+  transform: translateY(-5px);
+}
+ 
+#teachers .avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+ 
+#teachers .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+ 
+ 
+#banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+ 
+#banner .slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+ 
+#banner .slide {
+  min-width: 100%;
+  position: relative;
+}
+ 
+#banner .slide img {
+  width: 100%;
+  display: block;
+}
+ 
+#banner .caption {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #000000;
+  background: rgba(143, 211, 243, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+ 
+#banner .slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+ 
+#banner .slider-nav span {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+  padding: 0 1rem;
+  user-select: none;
+}
+ 
+ 
+ 
+/* ลดระยะห่างบน-ล่างของทุก section */
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+ 
+/* section แรก (banner/hero) อาจใหญ่หน่อย */
+section:first-of-type {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+ 
+/* ลด margin ของ section-head */
+.section-head {
+  margin-bottom: 12px; /* ลดลงจากเดิม */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+ 
+/* ปรับ gap ของ grid ให้เล็กลง */
+.grid {
+  display: grid;
+  gap: 8px; /* จากเดิม 18px */
+}
+ 
+/* ปรับ gap ของ chips */
+.chips {
+  display: flex;
+  gap: 4px; /* จากเดิม 8px */
+  flex-wrap: wrap;
+}
+ 
+/* ปรับ card hover effect ให้น้อยลง */
+.card:hover {
+  transform: translateY(-2px);
+}
+ 
+/* สำหรับมือถือ */
+@media (max-width: 860px) {
+  .hero-inner {
+    padding: 16px 0; 
+    gap: 12px;
+  }
+}
+ 
+ 
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.mobile-menu.hidden {
+  display: none;
+}
+ 
+@media(min-width: 860px){
+  .menu-btn,
+  .mobile-menu {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+}

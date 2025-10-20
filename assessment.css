@@ -1,0 +1,234 @@
+/* ตั้งค่าพื้นฐาน */
+:root{
+      --brand: #69abe4;           /* เปลี่ยนสีหลักของเว็บ */
+      --brand-600: #1565c0;
+      --brand-700: #9cbff3;
+      --accent: #ffca28;          /* สีเน้น */
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --ring: rgba(30,136,229,.35);
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(2, 8, 23, .08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:'Noto Sans Thai',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:var(--bg); line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px, 100%); margin-inline:auto}
+    .nav-links{display:flex; gap:18px; align-items:center}
+    .nav-links a{padding:10px 12px; border-radius:12px; font-weight:600; color:#1f2937}
+    .nav-links a:hover{background:#eef5ff}
+    .cta{background:var(--brand); color:white; padding:10px 14px; border-radius:12px; box-shadow:var(--shadow)}
+    .cta:hover{background:var(--brand-600)}
+    body {
+    background:radial-gradient(20000px 200000px at 80% 150px, #dbeafe 0%, transparent 50%), linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 30px;
+
+
+
+.form-section-wrapper {
+    display: flex;
+    flex-direction: column; /* ทำให้ลูกๆ เรียงลงมา */
+    gap: 25px; /* สร้างช่องว่างระหว่างบล็อก */
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 800px;
+}
+
+
+
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------- */
+/* สไตล์สำหรับ Radio Button ที่กำหนดเอง (Custom Radio Style) */
+/* ------------------------------------- */
+
+/* 1. จัดรูปแบบ Label ภายนอก */
+.custom-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px; /* เว้นที่ว่างสำหรับ Radio Button */
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    color: #555;
+}
+
+/* 2. ซ่อน Radio Button ดั้งเดิมของ HTML/Browser */
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* 3. สร้าง Radiomark ภายนอก (วงกลม) */
+.radiomark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    transition: all 0.2s ease-in-out;
+}
+
+/* 4. เมื่อเมาส์ชี้ (Hover) */
+.custom-radio:hover input ~ .radiomark {
+    background-color: #ddd;
+    border-color: #888;
+}
+
+/* 5. เมื่อถูกเลือก (Checked) ให้เปลี่ยนสีพื้นหลัง */
+.custom-radio input:checked ~ .radiomark {
+    background-color: #69abe4; /* สีฟ้าเมื่อถูกเลือก */
+    border-color: #69abe4;
+}
+
+/* 6. สร้างจุดวงกลมด้านในเมื่อถูกเลือก ด้วย ::after */
+.radiomark:after {
+    content: ""; 
+    position: absolute;
+    display: none; 
+}
+
+/* แสดงจุดเมื่อถูกเลือก */
+.custom-radio input:checked ~ .radiomark:after {
+    display: block;
+}
+
+/* จัดรูปแบบจุดวงกลมด้านใน */
+.custom-radio .radiomark:after {
+    top: 6px;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white; /* จุดวงกลมสีขาว */
+
+}
+    /* ------------------------------------- */
+/* สไตล์สำหรับปุ่ม Submit */
+/* ------------------------------------- */
+.submit-button {
+    display: block;
+    width: 250px;
+    margin: 30px auto 50px auto;
+    padding: 15px 30px;
+    background-color: var(--brand-600);
+    color: white;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--brand);
+    box-shadow: 0 4px 10px var(--ring);
+}
+
+
+/* ------------------------------------- */
+/* สไตล์สำหรับ Pop-up/Modal */
+/* ------------------------------------- */
+
+/* พื้นหลังมืด/Overlay */
+.popup-overlay {
+    display: none; /* ซ่อนไว้ก่อนเริ่มต้น */
+    position: fixed; /* ตรึงไว้กลางหน้าจอ */
+    z-index: 1000; /* ให้อยู่เหนือทุกองค์ประกอบ */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* พื้นหลังสีดำโปร่งแสง */
+    
+    /* จัดกึ่งกลางเนื้อหาในแนวนอนและแนวตั้ง */
+    justify-content: center;
+    align-items: center;
+}
+
+/* กล่อง Pop-up ที่มีเนื้อหา */
+.popup-content {
+    background-color: var(--card);
+    margin: 15% auto; /* จัดให้อยู่กึ่งกลางในแนวตั้งถ้าไม่ใช้ flex */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transform: scale(0.9); /* เริ่มต้นขนาดเล็กนิดหน่อย */
+    animation: scaleIn 0.3s forwards; /* เพิ่มแอนิเมชันตอนเปิด */
+}
+
+/* หัวข้อใน Pop-up */
+.popup-content h2 {
+    color: #28a745; /* สีเขียวสำหรับสำเร็จ */
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+
+/* ข้อความใน Pop-up */
+.popup-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #e9f7ef;
+    border-radius: 6px;
+    border-left: 5px solid #28a745;
+}
+
+/* ปุ่มปิด */
+.close-button {
+    background-color: var(--brand);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: var(--brand-600);
+}
+
+/* แอนิเมชัน Pop-up */
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+    }

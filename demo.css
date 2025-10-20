@@ -1,0 +1,333 @@
+
+/* ******************************************************
+	Author URI: https://codeconvey.com/
+	Demo Purpose Only - May not require to add.
+	font-family: "Raleway",sans-serif;
+*********************************************************/
+:root{
+      --brand: #69abe4;           /* เปลี่ยนสีหลักของเว็บ */
+      --brand-600: #1565c0;
+      --brand-700: #9cbff3;
+      --accent: #ffca28;          /* สีเน้น */
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --ring: rgba(30,136,229,.35);
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(2, 8, 23, .08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:'Noto Sans Thai',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:var(--bg); line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px, 100%); margin-inline:auto}
+
+    /* เพิ่มโค้ดนี้ลงในไฟล์ CSS (หรือใน <style> block) */
+.popup-overlay {
+    /* ซ่อน Pop-up ไว้ก่อน */
+    display: none; 
+    
+    /* จัดตำแหน่งให้อยู่บนสุดและเต็มหน้าจอ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* พื้นหลังสีดำโปร่งแสง */
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    /* จัดเนื้อหาให้อยู่ตรงกลาง */
+    justify-content: center;
+    align-items: center;
+    
+    /* ตรวจสอบให้แน่ใจว่าอยู่เหนือทุกองค์ประกอบ */
+    z-index: 1000; 
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+}
+
+.close-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a{
+
+	text-decoration: none;
+	outline: none;
+}
+a:hover, a:focus {
+	color: #373e18;
+}
+section {
+    float: left;
+    width: 100%;
+	padding-bottom:3em;
+}
+h2 {
+    color: #1a0e0e;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+	text-transform:uppercase;
+}
+h2 span {
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    opacity: 0.7;
+    margin-top: 5px;
+	text-transform:uppercase;
+}
+
+#float-right{
+	float:right;	
+}
+
+/* ******************************************************
+	Script Top
+*********************************************************/
+
+.ScriptTop {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    font-size: 0.69em;
+    font-weight: 600;
+    line-height: 2.2;
+    padding: 12px 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* To Navigation Style 1*/
+.ScriptTop ul {
+    margin: 24px 0;
+    padding: 0;
+    text-align: left;
+}
+.ScriptTop li{
+	list-style:none;	
+	display:inline-block;
+}
+.ScriptTop li a {
+    background: #1565c0 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 18px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.ScriptTop li a:hover{
+	background:#000;
+	color:#fff;
+}
+
+
+/* ******************************************************
+	Script Header
+*********************************************************/
+
+.ScriptHeader {
+    float: left;
+    width: 100%;
+    padding: 2em 0;
+}
+.rt-heading {
+    margin: 0 auto;
+	text-align:center;
+}
+.Scriptcontent{
+	line-height:28px;	
+}
+.ScriptHeader h1{
+	
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+    color: #1565c0;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+
+}
+.ScriptHeader h2 {
+    color: #312c8f;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0 0;
+    line-height: normal;
+
+}
+.ScriptHeader h1 span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+
+}
+.ScriptHeader span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+
+
+
+/* ******************************************************
+	Live Demo
+*********************************************************/
+
+
+
+
+
+/* ******************************************************
+	Responsive Grids
+*********************************************************/
+
+.rt-container {
+	margin: 0 auto;
+	padding-left:12px;
+	padding-right:12px;
+}
+.rt-row:before, .rt-row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); border:1px solid rgba(2,8,23,.06)}
+    .card h3{margin:6px 0 8px}
+    .pill{display:inline-block; padding:6px 10px; background:#f1f5f9; border-radius:999px; font-size:12px; font-weight:700; color:#334155}
+
+.rt-row:after {
+  clear: both;
+}
+[class^="col-rt-"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  padding: 0 15px;
+  min-height: 1px;
+  position: relative;
+}
+
+
+@media (min-width: 768px) {
+  .rt-container {
+    width: 750px;
+  }
+  [class^="col-rt-"] {
+    float: left;
+    width: 49.9999999999%;
+  }
+  .col-rt-6, .col-rt-12 {
+    width: 100%;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+	.rt-container {
+		width: 1170px;
+	}
+	.col-rt-1 {
+		width:16.6%;
+	}
+	.col-rt-2 {
+		width:30.33%;
+	}
+	.col-rt-3 {
+		width:50%;
+	}
+	.col-rt-4 {
+		width: 67.664%;
+	}
+	.col-rt-5 {
+		width: 83.33%;
+	}
+	
+
+}
+
+@media only screen and (min-width:240px) and (max-width: 768px){
+	 .ScriptTop h1, .ScriptTop ul {
+		text-align: center;
+	}
+	.ScriptTop h1{
+		margin-top:0;
+		margin-bottom:15px;
+	}
+	.ScriptTop ul{
+		 margin-top:12px;		
+	}
+	
+	.ScriptHeader h1,
+	.ScriptHeader h2, 
+	.scriptnav ul{
+		text-align:center;	
+	}
+	.scriptnav ul{
+		 margin-top:12px;		
+	}
+	#float-right{
+		float:none;	
+	}
+	
+  
+}
+@media (max-width: 860px) {
+  .hero-inner {
+    padding: 16px 0; 
+    gap: 12px;
+  }
+}
+ 
+ 
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.mobile-menu.hidden {
+  display: none;
+}
+ 
+@media(min-width: 860px){
+  .menu-btn,
+  .mobile-menu {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+
+
